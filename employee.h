@@ -28,12 +28,4 @@ public:
     time_t getAdmissionDate();
 };
 
-bool Employee::operator==(const Employee &emp)
-{
-    if (this->cpf.compare(emp.cpf) == 0)
-        return true;
-
-    return false;
-}
-
 #endif

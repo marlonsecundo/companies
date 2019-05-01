@@ -8,6 +8,14 @@ Employee::Employee(string cpf, string name, double salary, time_t admissionDate)
     this->admissionDate = admissionDate;
 }
 
+bool Employee::operator==(const Employee &emp)
+{
+    if (this->cpf.compare(emp.cpf) == 0)
+        return true;
+
+    return false;
+}
+
 // SETTERS
 
 void Employee::setName(string name)

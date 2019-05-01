@@ -9,6 +9,29 @@ Company::Company(string name, string cnpj)
     this->cnpj = cnpj;
 }
 
+std::ostream &operator<<(std::ostream &os, Company const comp)
+{
+    for (int i = 0; i < comp.employeeList.size(); i++)
+    {
+        Employee emp = comp.employeeList[i];
+        string sep = ",";
+        time_t value = emp.getAdmissionDate();
+        struct tm *timeinfo = localtime(&value);
+
+        os << emp.getCpf() << sep << emp.getName() << to_string(emp.getSalary()) << sep << asctime(timeinfo) << endl;
+    }
+
+    return os;
+}
+
+bool Company::operator==(const Company &comp)
+{
+    if (this->cnpj.compare(comp.cnpj) == 0)
+        return true;
+
+    return false;
+}
+
 // GETTERS
 
 string Company::getCnpj()
