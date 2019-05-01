@@ -1,8 +1,6 @@
 CC=g++
 #.DEFAULT_GOAL=calculadora
 
-employee.o: employee.cpp employee.h
-		$(CC) employee.cpp -c
 
 company.o: company.cpp company.h
 		$(CC) company.cpp -c
