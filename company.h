@@ -24,6 +24,9 @@ public:
 
     Employee getEmployee(string cpf);
     void addEmployee(Employee emp);
+
+    void increaseSalary(double percentage);
+    vector<Employee> getNoviceEmployees();
 };
 
 #endif

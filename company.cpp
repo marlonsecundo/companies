@@ -53,3 +53,32 @@ void Company::addEmployee(Employee emp)
         this->employeeList.push_back(emp);
     }
 }
+
+// METHODS
+
+void Company::increaseSalary(double percentage)
+{
+    percentage = percentage / 100;
+
+    for (int i = 0; i < this->employeeList.size(); i++)
+    {
+        double salary = this->employeeList[0].getSalary();
+        this->employeeList[i].setSalary(salary + salary * percentage);
+    }
+}
+
+vector<Employee> Company::getNoviceEmployees()
+{
+    vector<Employee> noviceEmps;
+    for (int i = 0; i < this->employeeList.size(); i++)
+    {
+        time_t now = time(0);
+        double seconds = difftime(now, this->employeeList[i].getAdmissionDate());
+        double days = seconds / 60 / 60 / 24;
+
+        if (days <= 90)
+            noviceEmps.push_back(this->employeeList[i]);
+    }
+
+    return noviceEmps;
+}

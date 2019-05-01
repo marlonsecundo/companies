@@ -11,21 +11,21 @@ class Employee
 private:
     string cpf;
     string name;
-    double salario;
-    time_t admission;
+    double salary;
+    time_t admissionDate;
 
 public:
-    Employee(string cpf, string name, double salario, time_t admission);
+    Employee(string cpf, string name, double salary, time_t admissionDate);
     bool operator==(const Employee &emp);
 
     void setName(string name);
-    void setSalario(double salario);
-    void setAdmission(time_t admission);
+    void setSalary(double salary);
+    void setAdmissionDate(time_t admissionDate);
 
     string getCpf();
     string getName();
-    double getSalario();
-    time_t getAdmission();
+    double getSalary();
+    time_t getAdmissionDate();
 };
 
 bool Employee::operator==(const Employee &emp)

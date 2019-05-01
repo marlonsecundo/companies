@@ -1,11 +1,11 @@
 #include "employee.h"
 
-Employee::Employee(string cpf, string name, double salario, time_t admission)
+Employee::Employee(string cpf, string name, double salary, time_t admissionDate)
 {
     this->cpf = cpf;
     this->name = name;
-    this->salario = salario;
-    this->admission = admission;
+    this->salary = salary;
+    this->admissionDate = admissionDate;
 }
 
 // SETTERS
@@ -15,14 +15,14 @@ void Employee::setName(string name)
     this->name = name;
 }
 
-void Employee::setSalario(double salario)
+void Employee::setSalary(double salary)
 {
-    this->salario = salario;
+    this->salary = salary;
 }
 
-void Employee::setAdmission(time_t admission)
+void Employee::setAdmissionDate(time_t admissionDate)
 {
-    this->admission = admission;
+    this->admissionDate = admissionDate;
 }
 
 // GETTERS
@@ -37,12 +37,12 @@ string Employee::getName()
     return this->name;
 }
 
-double Employee::getSalario()
+double Employee::getSalary()
 {
-    return this->salario;
+    return this->salary;
 }
 
-time_t Employee::getAdmission()
+time_t Employee::getAdmissionDate()
 {
-    return this->admission;
+    return this->admissionDate;
 }
