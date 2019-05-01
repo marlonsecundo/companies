@@ -1,7 +1,8 @@
 #include "employee.h"
 
-Employee::Employee(string name, double salario, time_t admission)
+Employee::Employee(string cpf, string name, double salario, time_t admission)
 {
+    this->cpf = cpf;
     this->name = name;
     this->salario = salario;
     this->admission = admission;
@@ -25,6 +26,11 @@ void Employee::setAdmission(time_t admission)
 }
 
 // GETTERS
+
+string Employee::getCpf()
+{
+    return this->cpf;
+}
 
 string Employee::getName()
 {

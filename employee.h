@@ -15,7 +15,7 @@ private:
     time_t admission;
 
 public:
-    Employee(string name, double salario, time_t admission);
+    Employee(string cpf, string name, double salario, time_t admission);
 
     void setName(string name);
     void setSalario(double salario);
