@@ -21,6 +21,20 @@ string Company::getName()
     return this->name;
 }
 
+Employee Company::getEmployee(string cpf)
+{
+    Employee emp(cpf, "name", 0, NULL);
+
+    vector<Employee> list = this->employeeList;
+    vector<Employee>::iterator it = find(list.begin(), list.end(), emp);
+
+    if (it != list.end())
+    {
+        int index = it - list.begin();
+        return list[index];
+    }
+}
+
 // SETTERS
 
 void Company::setName(string name)
