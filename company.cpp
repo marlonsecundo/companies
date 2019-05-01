@@ -23,7 +23,7 @@ string Company::getName()
 
 Employee Company::getEmployee(string cpf)
 {
-    Employee emp(cpf, "name", 0, NULL);
+    Employee emp(cpf, "name", 0, time(0));
 
     vector<Employee> list = this->employeeList;
     vector<Employee>::iterator it = find(list.begin(), list.end(), emp);
@@ -33,6 +33,8 @@ Employee Company::getEmployee(string cpf)
         int index = it - list.begin();
         return list[index];
     }
+
+    return emp;
 }
 
 // SETTERS
