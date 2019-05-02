@@ -7,10 +7,10 @@ using namespace std;
 class Manager
 {
 private:
-    vector<Company> companyList;
-
 public:
+    vector<Company> companyList;
     void addCompany(Company comp);
+    Company *getCompany(string cnpj);
 };
 
 #endif

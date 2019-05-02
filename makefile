@@ -16,6 +16,6 @@ admInterface.o: admInterface.cpp admInterface.h
 main: main.cpp admInterface.o employee.o company.o manager.o
 		$(CC) main.cpp admInterface.o employee.o company.o manager.o -o main
 
-#clear:
-#		rm *.o
-#		rm calculadora
+clear:
+		rm *.o
+		rm main

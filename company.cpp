@@ -1,6 +1,7 @@
 using namespace std;
 
 #include "company.h"
+#include "iostream"
 #include <algorithm>
 
 Company::Company(string name, string cnpj)
@@ -11,6 +12,8 @@ Company::Company(string name, string cnpj)
 
 std::ostream &operator<<(std::ostream &os, Company const comp)
 {
+
+    cout << comp.employeeList.size();
     for (int i = 0; i < comp.employeeList.size(); i++)
     {
         Employee emp = comp.employeeList[i];

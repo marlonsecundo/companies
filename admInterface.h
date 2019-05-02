@@ -13,6 +13,7 @@ public:
     void start();
     void createCompany();
     void addEmp();
+    void listEmployees();
     int getMenuAction();
 };
 

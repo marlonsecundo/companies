@@ -13,3 +13,19 @@ void Manager::addCompany(Company comp)
         this->companyList.push_back(comp);
     }
 }
+
+Company *Manager::getCompany(string cnpj)
+{
+    Company comp("name", cnpj);
+
+    vector<Company> list = this->companyList;
+    vector<Company>::iterator it = find(list.begin(), list.end(), comp);
+
+    if (it != list.end())
+    {
+        int index = it - list.begin();
+        return &this->companyList[index];
+    }
+
+    return &comp;
+}
