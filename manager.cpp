@@ -29,3 +29,22 @@ Company *Manager::getCompany(string cnpj)
 
     return &comp;
 }
+
+string Manager::getAvgEmpPerComps()
+{
+    string result = "";
+    int avg;
+
+    result += "-- AVG OF EMPLOYEES PER COMPANIES --\n";
+    for (int i = 0; i < this->companyList.size(); i++)
+    {
+        result += "Company: " + companyList[i].getName();
+        result += " - Cnpj: " + companyList[i].getCnpj() + "\n";
+        result += "Employeers Count: " + to_string(companyList[i].getEmpCounts()) + "\n";
+
+        avg += companyList[i].getEmpCounts();
+    }
+    avg /= companyList.size();
+    result += "\n-- AVG: " + avg;
+    return result;
+}

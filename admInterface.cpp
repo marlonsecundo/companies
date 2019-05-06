@@ -19,6 +19,12 @@ void AdmInterface::listEmployees()
     cout << endl;
 }
 
+void AdmInterface::printEmpAvg()
+{
+    string avg = manager.getAvgEmpPerComps();
+    cout << avg;
+}
+
 void AdmInterface::addEmp()
 {
     cout << endl;
@@ -36,11 +42,12 @@ void AdmInterface::addEmp()
     cin >> cpf;
     cout << "Digite o salário: ";
     cin >> salary;
-    cout << "Digite a data de admissão (MM-DD-YYYY): ";
-    cin >> s;
+    cout << "Digite a data de admissão (YYYY-MM-DD): ";
+    getline(cin, s);
+    getline(cin, s);
 
     istringstream date(s);
-    date >> std::get_time(&tm, "%M-%D-%Y"); // or just %T in this case
+    date >> get_time(&tm, "%Y %m %d"); // or just %T in this case
     admissionDate = mktime(&tm);
 
     Employee emp(cpf, name, salary, admissionDate);
@@ -78,6 +85,7 @@ int AdmInterface::getMenuAction()
     cout << "1 - Criar Empresa" << endl;
     cout << "2 - Adicionar Funcionário" << endl;
     cout << "3 - Listar Funcionários" << endl;
+    cout << "4 - Imprimir Média de Funcionários" << endl;
     cout << "----                 ----" << endl;
     cout << "Digite o numero da escolha: ";
 
@@ -103,9 +111,12 @@ void AdmInterface::start()
         case 3:
             this->listEmployees();
             break;
-
+        case 4:
+            this->printEmpAvg();
+            break;
         default:
-            cout << "---- Execução Encerrada ----" << endl;
+            cout
+                << "---- Execução Encerrada ----" << endl;
             return;
         }
     }

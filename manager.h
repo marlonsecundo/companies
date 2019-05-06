@@ -11,6 +11,7 @@ public:
     vector<Company> companyList;
     void addCompany(Company comp);
     Company *getCompany(string cnpj);
+    string getAvgEmpPerComps();
 };
 
 #endif

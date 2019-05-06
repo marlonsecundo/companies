@@ -21,7 +21,7 @@ std::ostream &operator<<(std::ostream &os, Company const comp)
         time_t value = emp.getAdmissionDate();
         struct tm *timeinfo = localtime(&value);
 
-        os << emp.getCpf() << sep << emp.getName() << to_string(emp.getSalary()) << sep << asctime(timeinfo) << endl;
+        os << emp.getCpf() << sep << emp.getName() << sep << to_string(emp.getSalary()) << sep << asctime(timeinfo) << endl;
     }
 
     return os;
@@ -107,4 +107,9 @@ vector<Employee> Company::getNoviceEmployees()
     }
 
     return noviceEmps;
+}
+
+int Company::getEmpCounts()
+{
+    return this->employeeList.size();
 }

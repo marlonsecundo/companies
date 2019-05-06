@@ -14,6 +14,7 @@ public:
     void createCompany();
     void addEmp();
     void listEmployees();
+    void printEmpAvg();
     int getMenuAction();
 };
 

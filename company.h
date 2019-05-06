@@ -22,6 +22,7 @@ public:
 
     string getName();
     string getCnpj();
+    int getEmpCounts();
 
     void setName(string name);
 
