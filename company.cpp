@@ -35,7 +35,9 @@ bool Company::operator==(const Company &comp)
     return false;
 }
 
-// GETTERS
+/**
+* Getters
+*/
 
 string Company::getCnpj()
 {
